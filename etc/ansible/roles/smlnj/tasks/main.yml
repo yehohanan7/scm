@@ -1,0 +1,14 @@
+---
+- name: Create SML Installation directory
+  file: path=/sml state=directory
+
+- name: Extract Standard ML (new jersey)
+  unarchive: src=config.tgz dest=/sml
+
+- name: Install SML
+  command: chdir=/sml "{{ item }}" 
+  with_items: 
+    - config/install.sh
+
+
+

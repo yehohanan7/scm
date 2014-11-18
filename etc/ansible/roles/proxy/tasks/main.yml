@@ -1,0 +1,3 @@
+---
+- name: Proxy settings
+  copy: content="Acquire::http::Proxy \"{{ proxy_url }}\";" dest=/etc/apt/apt.conf.d/01proxy

@@ -1,0 +1,10 @@
+---
+- hosts: pfds
+  sudo: yes
+  vars: 
+    proxy_url: "http://{{ proxy_user }}:{{ proxy_password }}@{{ proxy_host }}:{{ proxy_port }}"
+  roles:
+    #- proxy
+    - common
+    - smlnj
+

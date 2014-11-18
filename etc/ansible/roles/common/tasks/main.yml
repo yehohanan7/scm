@@ -1,0 +1,17 @@
+---
+- name: Update apt-get
+  apt: update_cache=yes
+
+- name: Install unzip
+  apt: name=unzip state=present
+
+- name: Install Git
+  apt: name=git state=present
+
+- name: Install make
+  apt: name=make state=present
+
+- name: Configure path
+  copy: content="export PATH=/sml/bin:$PATH" dest=/home/vagrant/.profile
+
+
