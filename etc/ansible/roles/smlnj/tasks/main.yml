@@ -1,14 +1,12 @@
 ---
-- name: Create SML Installation directory
-  file: path=/sml state=directory
+- name: Adding SMLNJ repo
+  lineinfile: dest=/etc/apt/sources.list line="{{ item }}"
+  with_items:
+    - deb http://cz.archive.ubuntu.com/ubuntu trusty main universe
 
-- name: Extract Standard ML (new jersey)
-  unarchive: src=config.tgz dest=/sml
 
 - name: Install SML
-  command: chdir=/sml "{{ item }}" 
-  with_items: 
-    - config/install.sh
+  apt: name=smlnj state=present
 
 
 

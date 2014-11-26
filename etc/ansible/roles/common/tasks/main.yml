@@ -11,7 +11,7 @@
 - name: Install make
   apt: name=make state=present
 
-- name: Configure path
-  copy: content="export PATH=/sml/bin:$PATH" dest=/home/vagrant/.profile
+- name: Install Emacs
+  apt: name=emacs23 state=present
 
 
