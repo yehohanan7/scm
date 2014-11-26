@@ -1,0 +1,30 @@
+---
+
+- name: Install Erlang
+  apt: name={{ item }} state=present update_cache=true force=yes
+  with_items:
+    - build-essential
+    - git
+    - autoconf
+    - autoconf-archive
+    - gnu-standards
+    - erlang-base-hipe 
+    - erlang-dev
+    - erlang-manpages 
+    - erlang-eunit 
+    - erlang-nox 
+    - erlang-xmerl 
+    - erlang-inets
+    - libmozjs185-dev 
+    - libicu-dev
+    - curl 
+    - libcurl4-gnutls-dev 
+    - libtool
+    - help2man 
+    - texinfo 
+    - python-sphinx 
+    - python-pip
+
+
+#- name: Install pygments
+#  command: pip install -U pygments
