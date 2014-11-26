@@ -1,4 +1,11 @@
 ---
+
+- name: Ensure tools dir exist
+  file: path=/home/vagrant/tools state=directory
+
+- name: Ensure tools dir is in path
+  lineinfile: dest=/home/vagrant/.profile line="export PATH=/home/vagrant/tools/:$PATH"
+
 - name: Update apt-get
   apt: update_cache=yes
 

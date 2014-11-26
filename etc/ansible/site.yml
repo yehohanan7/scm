@@ -1,5 +1,5 @@
 ---
-- hosts: pfds
+- hosts: dev
   sudo: yes
   vars: 
     proxy_url: "http://{{ proxy_user }}:{{ proxy_password }}@{{ proxy_host }}:{{ proxy_port }}"
@@ -7,5 +7,6 @@
     - proxy
     - common
     - smlnj
+    - rebar
     - erlang
 
