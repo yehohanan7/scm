@@ -1,5 +1,7 @@
 ---
 - name: Install Rebar
-  get_url: url=https://github.com/rebar/rebar/wiki/rebar dest=/home/vagrant/tools/rebar mode=777
+  sudo: true
+  get_url: url=http://github.com/rebar/rebar/wiki/rebar dest=/home/vagrant/tools/ mode=777
+  environment: env
   
   

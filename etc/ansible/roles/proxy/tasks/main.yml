@@ -1,3 +1,9 @@
 ---
 - name: Proxy settings
   copy: content="Acquire::http::Proxy \"{{ proxy_url }}\";" dest=/etc/apt/apt.conf.d/01proxy
+
+- name: Proxy env 
+  lineinfile: dest=/home/vagrant/.profile line="{{ item }}"
+  with_items:
+    - export http_proxy={{ proxy_url }}
+    - export https_proxy={{ proxy_url }}

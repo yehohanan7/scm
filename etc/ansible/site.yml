@@ -3,6 +3,9 @@
   sudo: yes
   vars: 
     proxy_url: "http://{{ proxy_user }}:{{ proxy_password }}@{{ proxy_host }}:{{ proxy_port }}"
+    env: 
+      http_proxy: "{{ proxy_url }}"
+      https_proxy: "{{ proxy_url }}"
   roles:
     - proxy
     - common
