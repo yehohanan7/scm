@@ -4,6 +4,8 @@
   with_items:
     - deb http://cz.archive.ubuntu.com/ubuntu trusty main universe
 
+- name: Update apt-get
+  apt: update_cache=yes
 
 - name: Install SML
   apt: name=smlnj state=present
