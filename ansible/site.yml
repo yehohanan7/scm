@@ -9,6 +9,7 @@
   roles:
     - proxy
     - common
+    - maven
     - smlnj
     - rebar
     - erlang
