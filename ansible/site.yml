@@ -7,8 +7,10 @@
       http_proxy: "{{ proxy_url }}"
       https_proxy: "{{ proxy_url }}"
   roles:
-    - proxy
+    #- proxy
     - common
+    - ruby
+    - shen
     - maven
     - smlnj
     - rebar

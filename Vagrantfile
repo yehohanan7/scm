@@ -8,7 +8,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
   config.vm.box = "precise32"
   config.vm.network "private_network", ip: "192.168.111.222"
-  config.vm.synced_folder ".", "/home/vagrant"
 
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--memory", "2048", "--cpus", "2"]
@@ -19,8 +18,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :ansible do |ansible|
     ansible.verbose = "vvvv"
     ansible.sudo = true
-    ansible.playbook = "etc/ansible/site.yml"
-    ansible.inventory_path = "etc/ansible/hosts"
+    ansible.playbook = "ansible/site.yml"
+    ansible.inventory_path = "ansible/hosts"
     ansible.limit = "local"
   end
 
