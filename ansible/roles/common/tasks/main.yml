@@ -15,4 +15,5 @@
 - name: Install Emacs
   apt: name=emacs23 state=present
 
-
+- name: Install wget
+  apt: name=wget state=present
