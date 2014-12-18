@@ -13,6 +13,7 @@
     - maven
     - smlnj
     - java
+    - rebar
     - erlang
     
 
