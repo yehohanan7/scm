@@ -1,7 +1,6 @@
 ---
 - name: Install Rebar
   sudo: true
-  get_url: url=http://github.com/rebar/rebar/wiki/rebar dest=/usr/local/bin/ mode=777
-  environment: env
+  get_url: url=http://github.com/rebar/rebar/wiki/rebar dest=/usr/local/bin/ mode=777  
   
   
