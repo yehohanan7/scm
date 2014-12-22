@@ -1,0 +1,3 @@
+---
+- name: Install jekyll
+  apt: name=jekyll state=present

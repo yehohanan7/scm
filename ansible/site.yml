@@ -16,5 +16,6 @@
     - rebar
     - erlang
     - node
+    - jekyll
     
 
