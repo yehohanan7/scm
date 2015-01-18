@@ -18,5 +18,6 @@
     - node
     - jekyll
     - nginx
+    - gulp
     
 
