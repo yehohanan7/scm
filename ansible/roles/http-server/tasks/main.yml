@@ -1,0 +1,3 @@
+---
+- name: Install http-server
+  npm: name=http-server global=yes
