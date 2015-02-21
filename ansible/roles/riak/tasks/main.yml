@@ -1,6 +1,6 @@
 ---
 - name: Checkout Riak
-  git: repo=http://github.com/basho/riak.git dest=/riak
+  unarchive: src=http://s3.amazonaws.com/downloads.basho.com/riak/2.0/2.0.4/riak-2.0.4.tar.gz dest=/riak
 
 - name: Install Riak
   command: make rel chdir=/riak 
