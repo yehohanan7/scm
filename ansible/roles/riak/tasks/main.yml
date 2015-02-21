@@ -1,0 +1,6 @@
+---
+- name: Checkout Riak
+  git: repo=http://github.com/basho/riak.git dest=/riak
+
+- name: Install Riak
+  command: make rel chdir=/riak 

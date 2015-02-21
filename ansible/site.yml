@@ -19,5 +19,7 @@
     - jekyll
     - nginx
     - gulp
+    - leiningen
+    - riak    
     
 
