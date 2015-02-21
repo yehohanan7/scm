@@ -1,6 +1,9 @@
 ---
-- name: Checkout Riak
-  unarchive: src=http://s3.amazonaws.com/downloads.basho.com/riak/2.0/2.0.4/riak-2.0.4.tar.gz dest=/riak
+- name: Download riak
+  get_url: url=http://s3.amazonaws.com/downloads.basho.com/riak/2.0/2.0.4/riak-2.0.4.tar.gz chdir=/tmp/
+    
+- name: Extract Riak
+  unarchive: src=riak-2.0.4.tar.gz dest=/
 
 - name: Install Riak
   command: make rel chdir=/riak 
