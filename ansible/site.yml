@@ -20,6 +20,6 @@
     - nginx
     - gulp
     - leiningen
-    - riak    
+    #- riak    
     
 
