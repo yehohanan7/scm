@@ -9,7 +9,7 @@
   roles:
     - common
     - ruby
-    - shen
+    #- shen
     - maven
     - smlnj
     - java
