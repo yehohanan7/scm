@@ -1,0 +1,10 @@
+---
+- name: Checkout SBCL
+  git:  repo=http://github.com/sbcl/sbcl.git dest=/sbcl
+
+- name: Install SBCL
+  comomand: /sbcl/install.sh
+
+
+
+
