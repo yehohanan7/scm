@@ -12,7 +12,7 @@
   file: path=/sbcl state=directory
 
 - name: Copy start swank lisp
-  copy: src=/start-swank.lisp dest=/sbcl/
+  copy: src=start-swank.lisp dest=/sbcl/
 
 
 
