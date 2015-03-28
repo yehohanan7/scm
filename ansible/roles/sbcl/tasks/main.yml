@@ -8,6 +8,12 @@
 - name: Install SBCL
   apt: name=sbcl state=present update_cache=yes
 
+- name: Create sbcl directory
+  file: path=/sbcl state=directory
+
+- name: Copy start swank lisp
+  copy: src=/start-swank.lisp dest=/sbcl/
+
 
 
 
