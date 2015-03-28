@@ -9,7 +9,7 @@
   roles:
     - common
     - ruby
-    #- shen
+    - shen
     - maven
     - smlnj
     - java
@@ -20,6 +20,7 @@
     - nginx
     - gulp
     - leiningen
+    - sbcl
     #- riak    
     
 
