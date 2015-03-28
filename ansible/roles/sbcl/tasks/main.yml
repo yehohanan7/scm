@@ -1,9 +1,12 @@
 ---
-- name: Checkout SBCL
-  git:  repo=http://github.com/sbcl/sbcl.git dest=/sbcl
+#- name: Checkout SBCL
+#  git:  repo=http://github.com/sbcl/sbcl.git dest=/sbcl
+
+#- name: Install SBCL
+#  command: /sbcl/install.sh
 
 - name: Install SBCL
-  command: /sbcl/install.sh
+  apt: name=sbcl state=present update_cache=yes
 
 
 
