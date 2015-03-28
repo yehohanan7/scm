@@ -11,9 +11,14 @@
 - name: Create sbcl directory
   file: path=/sbcl state=directory
 
-- name: Copy start swank lisp
-  copy: src=start-swank.lisp dest=/sbcl/
+- name: Download quick lisp
+  get_url: url=http://beta.quicklisp.org/quicklisp.lisp dest=/sbcl/ mode=777
 
+- name: Copy quick lisp installer
+  copy: src=install-quicklisp.lisp dest=/sbcl/
+
+- name: Install quick lisp
+  command: sbcl --script install-quicklisp.lisp chdir=/sbcl
 
 
 
