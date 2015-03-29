@@ -17,6 +17,9 @@
 - name: Copy quick lisp installer
   copy: src=install-quicklisp.lisp dest=/sbcl/
 
+- name: Copy quick swank starter
+  copy: src=start-swank.lisp dest=/sbcl/
+  
 - name: Install quick lisp
   command: sbcl --script install-quicklisp.lisp chdir=/sbcl
 
