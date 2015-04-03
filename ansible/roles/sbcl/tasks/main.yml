@@ -8,20 +8,32 @@
 - name: Install SBCL
   apt: name=sbcl state=present update_cache=yes
 
-- name: Create sbcl directory
-  file: path=/sbcl state=directory
+- name: Install time
+  apt: name=time state=present update_cache=yes
 
-- name: Download quick lisp
-  get_url: url=http://beta.quicklisp.org/quicklisp.lisp dest=/sbcl/ mode=777
-
-- name: Copy quick lisp installer
-  copy: src=install-quicklisp.lisp dest=/sbcl/
-
-- name: Copy quick swank starter
-  copy: src=start-swank.lisp dest=/sbcl/
+- name: Checkout SBCL
+  git: repo=git clone git://git.code.sf.net/p/sbcl/sbcl dest=/sbcl
   
-- name: Install quick lisp
-  command: sbcl --script install-quicklisp.lisp chdir=/sbcl
+- name: Make SBCL
+  command: sh make.sh chdir=/sbcl
+
+- name: Remove apt-gets SBCL
+  apt: name=sbcl state=absent
+  
+- name: Install SBCL
+  command: sh install.sh chdir=/sbcl
+
+#- name: Download quick lisp
+#  get_url: url=http://beta.quicklisp.org/quicklisp.lisp dest=/sbcl/ mode=777
+
+#- name: Copy quick lisp installer
+#  copy: src=install-quicklisp.lisp dest=/sbcl/
+
+#- name: Copy quick swank starter
+#  copy: src=start-swank.lisp dest=/sbcl/
+  
+#- name: Install quick lisp
+#  command: sbcl --script install-quicklisp.lisp chdir=/sbcl
 
 
 
