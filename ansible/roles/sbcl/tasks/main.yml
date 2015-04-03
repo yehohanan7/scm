@@ -12,7 +12,7 @@
   apt: name=time state=present update_cache=yes
 
 - name: Checkout SBCL
-  git: repo=git clone git://git.code.sf.net/p/sbcl/sbcl dest=/sbcl
+  git: repo=git://git.code.sf.net/p/sbcl/sbcl dest=/sbcl
   
 - name: Make SBCL
   command: sh make.sh chdir=/sbcl
