@@ -1,10 +1,4 @@
 ---
-#- name: Checkout SBCL
-#  git:  repo=http://github.com/sbcl/sbcl.git dest=/sbcl
-
-#- name: Install SBCL
-#  command: /sbcl/install.sh
-
 - name: Install SBCL
   apt: name=sbcl state=present update_cache=yes
 
@@ -23,17 +17,23 @@
 - name: Install SBCL
   command: sh install.sh chdir=/sbcl
 
-#- name: Download quick lisp
-#  get_url: url=http://beta.quicklisp.org/quicklisp.lisp dest=/sbcl/ mode=777
-
-#- name: Copy quick lisp installer
-#  copy: src=install-quicklisp.lisp dest=/sbcl/
-
-#- name: Copy quick swank starter
-#  copy: src=start-swank.lisp dest=/sbcl/
+- name: Add sbcl to profile
+  lineinfile: dest=~/.profile line="export PATH=$PATH:/usr/local/bin"
   
-#- name: Install quick lisp
-#  command: sbcl --script install-quicklisp.lisp chdir=/sbcl
+- name: Create directory to keep lisp scripts
+  file: path=/sbcl_lib state=directory
+  
+- name: Download quick lisp
+  get_url: url=http://beta.quicklisp.org/quicklisp.lisp dest=/sbcl_lib/ mode=777
+
+- name: Copy quick lisp installer
+  copy: src=install-quicklisp.lisp dest=/sbcl_lib/
+
+- name: Copy quick swank starter
+  copy: src=start-swank.lisp dest=/sbcl_lib/
+  
+- name: Install quick lisp
+  command: sbcl --script install-quicklisp.lisp chdir=/sbcl_lib
 
 
 
