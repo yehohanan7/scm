@@ -17,9 +17,6 @@
 - name: Install SBCL
   command: sh install.sh chdir=/sbcl
 
-- name: Add sbcl to profile
-  lineinfile: dest=~/.profile line="export PATH=$PATH:/usr/local/bin"
-  
 - name: Create directory to keep lisp scripts
   file: path=/sbcl_lib state=directory
   
@@ -35,5 +32,7 @@
 - name: Install quick lisp
   command: sbcl --script install-quicklisp.lisp chdir=/sbcl_lib
 
+- name: Copy swank starter
+  copy: src=swank.sh dest=/usr/local/bin
 
 
